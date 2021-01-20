@@ -1,0 +1,52 @@
+{
+	"name": "bas-installer-extension",
+	"version": "0.0.1",
+	"publisher": "sap-partner-eng",
+	"license": "MIT",
+	"displayName": "SAP Partner Engineering BAS Installer",
+	"description": "Install Python, NOTROOT, etc. + helpful Docs.",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"icon": "sap-partner-eng.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/andrewlunde/sap-partner-eng-bas-installer-extension"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:bas-installer-extension.pythonInstaller",
+		"onCommand:bas-installer-extension.notrootInstaller"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "bas-installer-extension.pythonInstaller",
+				"title": "BAS: Install Python 2.9.0"
+			},
+			{
+				"command": "bas-installer-extension.notrootInstaller",
+				"title": "BAS: Install NOTROOT"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.52.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	}
+}
