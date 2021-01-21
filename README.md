@@ -2,9 +2,13 @@ The SAP Partner Engineering Business Application Studio(BAS) Installer Extension
 
 ## Python 2.9.0 Install
 
-Open the command palette with View -> Find Command... and search for "BAS".  Run the "BAS: Install Python 2.9.0" command.
+Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install Python__.  Open up the output and select the __Python Installer__ occurrence to see that it completed without issues.  Then verify that python is available by opening a new terminal and issuing the command.
 
-<img src=https://github.com/andrewlunde/sap-partner-eng-bas-installer-extension/releases/download/v0.0.0/bas_install_python.gif width=2492 height=1548>
+```
+python -V
+```
+
+<img src=https://blogs.sap.com/wp-content/uploads/2021/01/partner_eng_bas_installer_sm-1.gif width=582 height=346 />
 
 
 ## Post Python Install Setup
@@ -17,14 +21,18 @@ Open the command palette with View -> Find Command... and search for "Python:". 
 
 ## NOTROOT Install
 
-Open the command palette with View -> Find Command... and search for "BAS".  Run the "BAS: Install NOTROOT" command.
-
-<img src=https://github.com/andrewlunde/sap-partner-eng-bas-installer-extension/releases/download/v0.0.0/bas_install_notroot.gif width=2492 height=1548>
+Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install NOTROOT__.  Open up the output and select the __NOTROOT Installer__ occurrence to see that it completed without issues.  
 
 
 ## Verify NOTROOT
 
 NOTROOT installs a single command JSON Query(jq).  Verify that it's installed by performing a jq -V in a new terminal.
+
+```
+jq -V
+```
+
+<img src=https://blogs.sap.com/wp-content/uploads/2021/01/partner_eng_inst_notroot.gif width=582 height=346 />
 
 
 # SMSI CF-plugin Install
