@@ -1,6 +1,6 @@
 {
 	"name": "bas-installer-extension",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "SAP Partner Engineering BAS Installer",
@@ -18,7 +18,9 @@
 	],
 	"activationEvents": [
 		"onCommand:bas-installer-extension.pythonInstaller",
-		"onCommand:bas-installer-extension.notrootInstaller"
+		"onCommand:bas-installer-extension.notrootInstaller",
+		"onCommand:bas-installer-extension.cfdefenvInstaller",
+		"onCommand:bas-installer-extension.cfsmsiInstaller"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -30,6 +32,14 @@
 			{
 				"command": "bas-installer-extension.notrootInstaller",
 				"title": "BAS: Install NOTROOT"
+			},
+			{
+				"command": "bas-installer-extension.cfdefenvInstaller",
+				"title": "BAS: Install CF DefaultEnv Plugin"
+			},
+			{
+				"command": "bas-installer-extension.cfsmsiInstaller",
+				"title": "BAS: Install CF SMSI Plugin"
 			}
 		]
 	},

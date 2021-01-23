@@ -41,6 +41,23 @@ This is a plugin for the Cloud Foundry CLI tool.  It's helpful when doing multit
 
 Normally these containers are not visible to the Database Explorer since they are not created as hana/hdi-shared instances.
 
+Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install CF SMSI Plugin__.  Open up the output and select the __CF SMSI Plugin Installer__ occurrence to see that it completed without issues.  
+
 ```
-cf install-plugin -r CF-Community "service-management"
+cf plugins
+```
+
+# DefaultEnv CF-plugin Install
+
+This is a Cloud Foundry CLI plugin designed to aid local development of multi-target applications (MTAs) in Cloud Foundry. The default-env command creates a local default-env.json file with the environment variables of the specified Cloud Foundry app - typically connection details for bound Cloud Foundry services such as SAP HANA HDI Containers, XSUAA (User Account and Authentication) and intra-MTA destinations defined in mta.yaml. Environment variables written to default-env.json include VCAP_APPLICATION, VCAP_SERVICES and destinations. The default-env.json file is used by @sap/approuter and @sap/hdi-deploy when running locally and it's also possible to use default-env.json from your own Node.js applications via @sap/xsenv as follows:
+
+```
+const xsenv = require('@sap/xsenv');
+xsenv.loadEnv();
+```
+
+Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install CF DefaultEnv Plugin__.  Open up the output and select the __CF DefaultEnv Plugin Installer__ occurrence to see that it completed without issues.  
+
+```
+cf plugins
 ```

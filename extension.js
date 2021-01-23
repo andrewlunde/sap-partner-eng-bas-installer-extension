@@ -218,6 +218,190 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(disposable2);
+
+	let disposable3 = vscode.commands.registerCommand('bas-installer-extension.cfdefenvInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("CF DefaultEnv Plugin Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('CF DefaultEnv Plugin Installer Begins!');
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_python.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		//var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_notroot.sh";
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_cfdefenv.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile;
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('NOTROOT Installer Finished!');
+						vscode.window.showInformationMessage('CF DefaultEnv Plugin Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "jq -V" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('CF DefaultEnv Plugin Installer Finished!');
+				}
+			});
+		});
+		
+	});
+
+	context.subscriptions.push(disposable3);
+
+	let disposable4 = vscode.commands.registerCommand('bas-installer-extension.cfsmsiInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("CF SMSI Plugin Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('CF SMSI Plugin Installer Begins!');
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_python.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_cfsmsi.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile;
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('NOTROOT Installer Finished!');
+						vscode.window.showInformationMessage('CF SMSI Plugin Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "jq -V" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('CF SMSI Plugin Installer Finished!');
+				}
+			});
+		});
+		
+	});
+
+	context.subscriptions.push(disposable4);
+
 }
 exports.activate = activate;
 
