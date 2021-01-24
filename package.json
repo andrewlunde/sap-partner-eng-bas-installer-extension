@@ -1,6 +1,6 @@
 {
 	"name": "bas-installer-extension",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "SAP Partner Engineering BAS Installer",

@@ -8,7 +8,7 @@ Open the command palette with __View -> Find Command…__  function.  Install Py
 python -V
 ```
 
-<img src=https://blogs.sap.com/wp-content/uploads/2021/01/partner_eng_bas_installer_sm-1.gif width=582 height=346 />
+<img src=https://blogs.sap.com/wp-content/uploads/2021/01/partner_eng_inst_python.gif width=582 height=346 />
 
 
 ## Post Python Install Setup
