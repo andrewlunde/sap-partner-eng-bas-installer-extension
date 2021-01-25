@@ -402,6 +402,97 @@ function activate(context) {
 
 	context.subscriptions.push(disposable4);
 
+	let disposable5 = vscode.commands.registerCommand('bas-installer-extension.yohagenInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("Hana Academy Yeoman Generators Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('Hana Academy Yeoman Generators Installer Begins!');
+
+		var shellcmd = "npm install --global generator-saphanaacademy-mta";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "npm install --global generator-saphanaacademy-haa";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				shellcmd = "npm install --global generator-saphanaacademy-odata";
+				out.appendLine('shellcmd: ' + shellcmd);
+
+				cp.exec(shellcmd, (err, stdout, stderr) => {
+					out.appendLine('rm -f stdout: ' + stdout);
+					out.appendLine('rm -f stderr: ' + stderr);
+					if (err) {
+						out.appendLine('rm -f error: ' + err);
+					}
+
+
+					shellcmd = "npm install --global generator-saphanaacademy-saas";
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('Hana Academy Yeoman Generators Installer Finished!');
+						vscode.window.showInformationMessage('Hana Academy Yeoman Generators Installed OK.');
+						
+						vscode.window.showInformationMessage('Verify with "yo" in a new terminal window.');
+					});
+				});
+			});
+		});
+	});
+
+	context.subscriptions.push(disposable5);
+
+	let disposable6 = vscode.commands.registerCommand('bas-installer-extension.yopegenInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("Partner Engineering Yeoman Generator Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('Partner Engineering Yeoman Generators Installer Begins!');
+
+		var shellcmd = "npm install --global generator-saphanaacademy-mta";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			out.appendLine('Partner Engineering Yeoman Generator Installer Finished!');
+			vscode.window.showInformationMessage('HPartner Engineering Yeoman Generator Installed OK.');
+			
+			vscode.window.showInformationMessage('Verify with "yo" in a new terminal window.');
+		});
+	});
+
+	context.subscriptions.push(disposable6);
+
 }
 exports.activate = activate;
 

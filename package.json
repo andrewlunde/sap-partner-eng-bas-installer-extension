@@ -1,6 +1,6 @@
 {
 	"name": "bas-installer-extension",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "SAP Partner Engineering BAS Installer",
@@ -20,7 +20,9 @@
 		"onCommand:bas-installer-extension.pythonInstaller",
 		"onCommand:bas-installer-extension.notrootInstaller",
 		"onCommand:bas-installer-extension.cfdefenvInstaller",
-		"onCommand:bas-installer-extension.cfsmsiInstaller"
+		"onCommand:bas-installer-extension.cfsmsiInstaller",
+		"onCommand:bas-installer-extension.yohagenInstaller",
+		"onCommand:bas-installer-extension.yopegenInstaller"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -40,6 +42,14 @@
 			{
 				"command": "bas-installer-extension.cfsmsiInstaller",
 				"title": "BAS: Install CF SMSI Plugin"
+			},
+			{
+				"command": "bas-installer-extension.yohagenInstaller",
+				"title": "BAS: Install Hana Academy Yeoman Generators"
+			},
+			{
+				"command": "bas-installer-extension.yopegenInstaller",
+				"title": "BAS: Install Partner Engineering Yeoman Generator"
 			}
 		]
 	},
