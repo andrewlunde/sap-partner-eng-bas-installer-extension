@@ -34,6 +34,8 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
+
+	// Python
 	let disposable = vscode.commands.registerCommand('bas-installer-extension.pythonInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
@@ -131,6 +133,7 @@ function activate(context) {
 
 	context.subscriptions.push(disposable);
 
+	// NOTROOT
 	let disposable2 = vscode.commands.registerCommand('bas-installer-extension.notrootInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
@@ -225,6 +228,7 @@ function activate(context) {
 
 	context.subscriptions.push(disposable2);
 
+	// CF DefaultEnv
 	let disposable3 = vscode.commands.registerCommand('bas-installer-extension.cfdefenvInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
@@ -319,7 +323,7 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(disposable3);
-
+	// CF SMSI
 	let disposable4 = vscode.commands.registerCommand('bas-installer-extension.cfsmsiInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
@@ -413,7 +417,7 @@ function activate(context) {
 	});
 
 	context.subscriptions.push(disposable4);
-
+	// HA Yo Gens
 	let disposable5 = vscode.commands.registerCommand('bas-installer-extension.yohagenInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
@@ -476,6 +480,7 @@ function activate(context) {
 
 	context.subscriptions.push(disposable5);
 
+	// PE Yo Gens
 	let disposable6 = vscode.commands.registerCommand('bas-installer-extension.yopegenInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
@@ -506,6 +511,7 @@ function activate(context) {
 
 	context.subscriptions.push(disposable6);
 
+	// HANA-CLI
 	let disposable7 = vscode.commands.registerCommand('bas-installer-extension.hanacliInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
