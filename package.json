@@ -46,15 +46,15 @@
 			},
 			{
 				"command": "bas-installer-extension.yohagenInstaller",
-				"title": "BAS: Install Hana Academy Yeoman Generators"
+				"title": "BAS: Install SAP HANA Academy yeoman generators"
 			},
 			{
 				"command": "bas-installer-extension.yopegenInstaller",
-				"title": "BAS: Install Partner Engineering Yeoman Generator"
+				"title": "BAS: Install SAP Partner Engineering yeoman generator"
 			},
 			{
 				"command": "bas-installer-extension.hanacliInstaller",
-				"title": "BAS: Install HANA-CLI"
+				"title": "BAS: Install SAP HANA-CLI"
 			}
 		]
 	},
