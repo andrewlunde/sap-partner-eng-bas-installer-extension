@@ -42,6 +42,9 @@ function activate(context) {
 		// Display a message box to the user
 		out.clear();
 		out.appendLine('Python Installer Begins!');
+
+		vscode.window.showInformationMessage('Python 3.9.0 Install Begins.');
+
 		var destdir = context.storageUri;
 
 		if (typeof destdir == "undefined") {
@@ -136,6 +139,9 @@ function activate(context) {
 		// Display a message box to the user
 		out.clear();
 		out.appendLine('NOTROOT Installer Begins!');
+
+		vscode.window.showInformationMessage('NOTROOT Installer Begins.');
+
 		var destdir = context.storageUri;
 
 		if (typeof destdir == "undefined") {
@@ -227,6 +233,9 @@ function activate(context) {
 		// Display a message box to the user
 		out.clear();
 		out.appendLine('CF DefaultEnv Plugin Installer Begins!');
+
+		vscode.window.showInformationMessage('CF DefaultEnv Plugin Installer Begins.');
+
 		var destdir = context.storageUri;
 
 		if (typeof destdir == "undefined") {
@@ -319,6 +328,9 @@ function activate(context) {
 		// Display a message box to the user
 		out.clear();
 		out.appendLine('CF SMSI Plugin Installer Begins!');
+
+		vscode.window.showInformationMessage('CF SMSI Plugin Installer Begins.');
+
 		var destdir = context.storageUri;
 
 		if (typeof destdir == "undefined") {
@@ -405,11 +417,11 @@ function activate(context) {
 	let disposable5 = vscode.commands.registerCommand('bas-installer-extension.yohagenInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
-		let out = vscode.window.createOutputChannel("Hana Academy Yeoman Generators Installer");
+		let out = vscode.window.createOutputChannel("SAP HANA Academy yeoman generators Installer");
 
 		// Display a message box to the user
 		out.clear();
-		out.appendLine('Hana Academy Yeoman Generators Installer Begins!');
+		out.appendLine('SAP HANA Academy yeoman generators Installer Begins!');
 
 		var shellcmd = "npm install --global generator-saphanaacademy-mta";
 		out.appendLine('shellcmd: ' + shellcmd);
@@ -452,8 +464,8 @@ function activate(context) {
 						if (err) {
 							out.appendLine('rm -f error: ' + err);
 						}
-						out.appendLine('Hana Academy Yeoman Generators Installer Finished!');
-						vscode.window.showInformationMessage('Hana Academy Yeoman Generators Installed OK.');
+						out.appendLine('SAP HANA Academy yeoman generators Installer Finished!');
+						vscode.window.showInformationMessage('SAP HANA Academy yeoman generators Installed OK.');
 						
 						vscode.window.showInformationMessage('Verify with "yo" in a new terminal window.');
 					});
@@ -467,13 +479,14 @@ function activate(context) {
 	let disposable6 = vscode.commands.registerCommand('bas-installer-extension.yopegenInstaller', function () {
 		// The code you place here will be executed every time your command is executed
 
-		let out = vscode.window.createOutputChannel("Partner Engineering Yeoman Generator Installer");
+		let out = vscode.window.createOutputChannel("SAP Partner Engineering yeoman generator Installer");
 
 		// Display a message box to the user
 		out.clear();
-		out.appendLine('Partner Engineering Yeoman Generators Installer Begins!');
+		out.appendLine('SAP Partner Engineering yeoman generators Installer Begins!');
+		vscode.window.showInformationMessage('SAP Partner Engineering yeoman generator Installer Begins!');
 
-		var shellcmd = "npm install --global generator-saphanaacademy-mta";
+		var shellcmd = "npm install --global generator-sap-partner-eng";
 		out.appendLine('shellcmd: ' + shellcmd);
 		console.log()
 
@@ -484,14 +497,44 @@ function activate(context) {
 				out.appendLine('curl error: ' + err);
 			}
 
-			out.appendLine('Partner Engineering Yeoman Generator Installer Finished!');
-			vscode.window.showInformationMessage('HPartner Engineering Yeoman Generator Installed OK.');
+			out.appendLine('SAP Partner Engineering yeoman generator Installer Finished!');
+			vscode.window.showInformationMessage('SAP Partner Engineering yeoman generator Installed OK.');
 			
 			vscode.window.showInformationMessage('Verify with "yo" in a new terminal window.');
 		});
 	});
 
 	context.subscriptions.push(disposable6);
+
+	let disposable7 = vscode.commands.registerCommand('bas-installer-extension.hanacliInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("HANA-CLI Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('HANA-CLI Installer Begins!');
+		vscode.window.showInformationMessage('HANA-CLI Installer Begins!');
+
+		var shellcmd = "npm install --global hana-cli";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			out.appendLine('HANA-CLI Installer Finished!');
+			vscode.window.showInformationMessage('HANA-CLI Installed OK.');
+			
+			vscode.window.showInformationMessage('Verify with "hana-cli version" in a new terminal window.');
+		});
+	});
+
+	context.subscriptions.push(disposable7);
 
 }
 exports.activate = activate;

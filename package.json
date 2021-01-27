@@ -1,6 +1,6 @@
 {
 	"name": "bas-installer-extension",
-	"version": "0.0.7",
+	"version": "0.0.10",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "SAP Partner Engineering BAS Installer",
@@ -22,7 +22,8 @@
 		"onCommand:bas-installer-extension.cfdefenvInstaller",
 		"onCommand:bas-installer-extension.cfsmsiInstaller",
 		"onCommand:bas-installer-extension.yohagenInstaller",
-		"onCommand:bas-installer-extension.yopegenInstaller"
+		"onCommand:bas-installer-extension.yopegenInstaller",
+		"onCommand:bas-installer-extension.hanacliInstaller"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -50,6 +51,10 @@
 			{
 				"command": "bas-installer-extension.yopegenInstaller",
 				"title": "BAS: Install Partner Engineering Yeoman Generator"
+			},
+			{
+				"command": "bas-installer-extension.hanacliInstaller",
+				"title": "BAS: Install HANA-CLI"
 			}
 		]
 	},
