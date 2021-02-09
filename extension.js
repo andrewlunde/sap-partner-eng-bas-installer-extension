@@ -468,10 +468,21 @@ function activate(context) {
 						if (err) {
 							out.appendLine('rm -f error: ' + err);
 						}
-						out.appendLine('SAP HANA Academy yeoman generators Installer Finished!');
-						vscode.window.showInformationMessage('SAP HANA Academy yeoman generators Installed OK.');
-						
-						vscode.window.showInformationMessage('Verify with "yo" in a new terminal window.');
+
+						shellcmd = "npm install -g generator-saphanaacademy-cap";
+						out.appendLine('shellcmd: ' + shellcmd);
+	
+						cp.exec(shellcmd, (err, stdout, stderr) => {
+							out.appendLine('rm -f stdout: ' + stdout);
+							out.appendLine('rm -f stderr: ' + stderr);
+							if (err) {
+								out.appendLine('rm -f error: ' + err);
+							}
+							out.appendLine('SAP HANA Academy yeoman generators Installer Finished!');
+							vscode.window.showInformationMessage('SAP HANA Academy yeoman generators Installed OK.');
+							
+							vscode.window.showInformationMessage('Verify with "yo" in a new terminal window.');
+						});
 					});
 				});
 			});
