@@ -1,9 +1,9 @@
 {
-	"name": "bas-installer-extension",
-	"version": "0.0.15",
+	"name": "bas-helper-extension",
+	"version": "0.0.16",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
-	"displayName": "SAP Partner Engineering BAS Installer",
+	"displayName": "SAP Partner Engineering BAS Helper",
 	"description": "Install Python, NOTROOT, etc. + helpful Docs.",
 	"engines": {
 		"vscode": "^1.52.0"
@@ -24,14 +24,15 @@
 		"onCommand:bas-installer-extension.cfsmsiInstaller",
 		"onCommand:bas-installer-extension.yohagenInstaller",
 		"onCommand:bas-installer-extension.yopegenInstaller",
-		"onCommand:bas-installer-extension.hanacliInstaller"
+		"onCommand:bas-installer-extension.hanacliInstaller",
+		"onCommand:bas-installer-extension.mitmproxyInstaller"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "bas-installer-extension.pythonInstaller",
-				"title": "BAS: Install Python 2.9.0"
+				"title": "BAS: Install Python 3.9.2"
 			},
 			{
 				"command": "bas-installer-extension.golangInstaller",
@@ -60,6 +61,10 @@
 			{
 				"command": "bas-installer-extension.hanacliInstaller",
 				"title": "BAS: Install SAP HANA-CLI"
+			},
+			{
+				"command": "bas-installer-extension.mitmproxyInstaller",
+				"title": "BAS: Install mitmproxy"
 			}
 		]
 	},
