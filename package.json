@@ -1,6 +1,6 @@
 {
 	"name": "bas-installer-extension",
-	"version": "0.0.13",
+	"version": "0.0.15",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "SAP Partner Engineering BAS Installer",
@@ -18,6 +18,7 @@
 	],
 	"activationEvents": [
 		"onCommand:bas-installer-extension.pythonInstaller",
+		"onCommand:bas-installer-extension.golangInstaller",
 		"onCommand:bas-installer-extension.notrootInstaller",
 		"onCommand:bas-installer-extension.cfdefenvInstaller",
 		"onCommand:bas-installer-extension.cfsmsiInstaller",
@@ -31,6 +32,10 @@
 			{
 				"command": "bas-installer-extension.pythonInstaller",
 				"title": "BAS: Install Python 2.9.0"
+			},
+			{
+				"command": "bas-installer-extension.golangInstaller",
+				"title": "BAS: Install GoLang 1.12.1"
 			},
 			{
 				"command": "bas-installer-extension.notrootInstaller",
