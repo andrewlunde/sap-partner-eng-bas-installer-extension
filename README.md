@@ -1,8 +1,8 @@
 The SAP Partner Engineering Business Application Studio(BAS) Installer Extension way to install Python,NOTROOT, other tools for customers using Eclipse Theia based IDE's. 
 
-## Manual BAS Install
+## Manual Enabling of BAS Extras
 
-If there are issues with the Open-VSX.org registry or the version of BAS you are using has the extensions functions disabled, you can manually install this extension with the following commands.
+If there are issues with the [Open-VSX.org](https://open-vsx.org/) registry or the version of BAS you are using has the extensions functions disabled, you can manually enable this extension with the following commands.
 
 ```
 mkdir -p /home/user/default-plugins
