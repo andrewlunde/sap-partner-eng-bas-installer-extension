@@ -1,5 +1,17 @@
 The SAP Partner Engineering Business Application Studio(BAS) Installer Extension way to install Python,NOTROOT, other tools for customers using Eclipse Theia based IDE's. 
 
+## Manual BAS Install
+
+If there are issues with the Open-VSX.org registry or the version of BAS you are using has the extensions functions disabled, you can manually install this extension with the following commands.
+
+```
+mkdir -p /home/user/default-plugins
+cd /home/user/default-plugins
+curl -LO https://open-vsx.org/api/sap-partner-eng/sap-bas-extras/0.0.17/file/sap-partner-eng.sap-bas-extras-0.0.17.vsix
+echo "Stop/Start this DevSpace to load the extensions."
+```
+
+
 ## Python 3.9.2 Install
 
 Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install Python__.  Open up the output and select the __Python Installer__ occurrence to see that it completed without issues.  Then verify that python is available by opening a new terminal and issuing the command.
@@ -61,3 +73,16 @@ Open the command palette with __View -> Find Command…__  function.  Install Py
 ```
 cf plugins
 ```
+# HANA Academy Yeoman Generators Install
+
+This is a set of Yeoman project generators provided by the HANA Academy.
+
+```
+```
+
+Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install CF DefaultEnv Plugin__.  Open up the output and select the __CF DefaultEnv Plugin Installer__ occurrence to see that it completed without issues.  
+
+```
+cf plugins
+```
+
