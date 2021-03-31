@@ -7,7 +7,7 @@ If there are issues with the [Open-VSX.org](https://open-vsx.org/) registry or t
 ```
 mkdir -p /home/user/default-plugins
 cd /home/user/default-plugins
-curl -LO https://open-vsx.org/api/sap-partner-eng/sap-bas-extras/0.0.17/file/sap-partner-eng.sap-bas-extras-0.0.17.vsix
+curl -LO https://open-vsx.org/api/sap-partner-eng/sap-bas-extras/0.0.19/file/sap-partner-eng.sap-bas-extras-0.0.19.vsix
 echo "Stop/Start this DevSpace to load the extensions."
 ```
 
