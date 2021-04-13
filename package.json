@@ -1,10 +1,10 @@
 {
-	"name": "bas-helper-extension",
-	"version": "0.0.16",
+	"name": "bas-installer-extension",
+	"version": "0.0.20",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
-	"displayName": "SAP Partner Engineering BAS Helper",
-	"description": "Install Python, NOTROOT, etc. + helpful Docs.",
+	"displayName": "SAP Partner Engineering BAS Installer",
+	"description": "Adds commands to install extras in SAP Business Application Studio(BAS).",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -16,6 +16,9 @@
 	"categories": [
 		"Other"
 	],
+        "keywords": [
+                "sap", "sappe", "sapbas", "bas", "basextras", "basextra", "partner", "partnereng", "partnerengineering"
+        ],
 	"activationEvents": [
 		"onCommand:bas-installer-extension.pythonInstaller",
 		"onCommand:bas-installer-extension.golangInstaller",
@@ -25,7 +28,8 @@
 		"onCommand:bas-installer-extension.yohagenInstaller",
 		"onCommand:bas-installer-extension.yopegenInstaller",
 		"onCommand:bas-installer-extension.hanacliInstaller",
-		"onCommand:bas-installer-extension.mitmproxyInstaller"
+		"onCommand:bas-installer-extension.mitmproxyInstaller",
+		"onCommand:bas-installer-extension.btpcliInstaller"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -65,6 +69,10 @@
 			{
 				"command": "bas-installer-extension.mitmproxyInstaller",
 				"title": "BAS: Install mitmproxy"
+			},
+			{
+				"command": "bas-installer-extension.btpcliInstaller",
+				"title": "BAS: Install SAP BTP CLI"
 			}
 		]
 	},

@@ -1,6 +1,8 @@
+# NOTICE: This extension is replaced by [BAS Extras](https://open-vsx.org/extension/sap-partner-eng/sap-bas-extras) but kept here to avoid broken links.
+
 The SAP Partner Engineering Business Application Studio(BAS) Installer Extension way to install Python,NOTROOT, other tools for customers using Eclipse Theia based IDE's. 
 
-## Python 2.9.0 Install
+## Python 3.9.2 Install
 
 Open the command palette with __View -> Find Command…__  function.  Install Python by typing __BAS: Install Python__.  Open up the output and select the __Python Installer__ occurrence to see that it completed without issues.  Then verify that python is available by opening a new terminal and issuing the command.
 
@@ -15,7 +17,7 @@ python -V
 
 ## Select Python Interpreter
 
-Open the command palette with View -> Find Command... and search for "Python:".  Run the "Python: Select Interpreter" command and select /home/user/python_3_9_0/bin/python.
+Open the command palette with View -> Find Command... and search for "Python:".  Run the "Python: Select Interpreter" command and select /home/user/python_3_9_2/bin/python.
 
 <!-- <img src=https://github.com/andrewlunde/sap-partner-eng-bas-installer-extension/releases/download/v0.0.0/020_select_python.gif width=1056 height=522> -->
 

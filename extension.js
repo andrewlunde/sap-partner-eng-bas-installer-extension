@@ -45,7 +45,7 @@ function activate(context) {
 		out.clear();
 		out.appendLine('Python Installer Begins!');
 
-		vscode.window.showInformationMessage('Python 3.9.0 Install Begins.');
+		vscode.window.showInformationMessage('Python 3.9.2 Install Begins.');
 
 		var destdir = context.storageUri;
 
@@ -114,7 +114,7 @@ function activate(context) {
 							out.appendLine('rm -f error: ' + err);
 						}
 						out.appendLine('Python Installer Finished!');
-						vscode.window.showInformationMessage('Python 3.9.0 Installed OK.');
+						vscode.window.showInformationMessage('Python 3.9.2 Installed OK.');
 
 						
 						vscode.window.showInformationMessage('Verify with "python -V" in a new terminal window.');
@@ -747,6 +747,102 @@ function activate(context) {
 
 	context.subscriptions.push(disposable9);
 
+		// mitmproxy
+		let disposable10 = vscode.commands.registerCommand('bas-installer-extension.btpcliInstaller', function () {
+			// The code you place here will be executed every time your command is executed
+	
+			let out = vscode.window.createOutputChannel("SAP BTP CLI Installer");
+	
+			// Display a message box to the user
+			out.clear();
+			out.appendLine('SAP BTP CLI Installer Begins!');
+	
+			vscode.window.showInformationMessage('SAP BTP CLI Installer Begins.');
+	
+			var destdir = context.storageUri;
+	
+			if (typeof destdir == "undefined") {
+				destdir = "/tmp";
+			}
+	
+			//let destdir = "/home/user";
+			//let destdir = "/tmp";
+			//let destdir = ".";
+			out.appendLine('destdir: ' + destdir);
+	
+			let destfile = destdir + "/bas_install_btp_cli.sh";
+			out.appendLine('destfile: ' + destfile);
+	
+			let remove_sh_file = false;
+	
+			vscode.workspace.fs.createDirectory(destdir);
+	
+			// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+			vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+				out.appendLine('currentTheme: ' + currentTheme);
+			});
+	
+			//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+	
+			//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+	
+			// let settings = vscode.workspace.getConfiguration("python");
+			// settings.update("condaPath", "whatever") => {
+			// 	ConfigurationLoader.LoadConfiguration() => {
+	
+			// 	}
+			// }
+			// await ;
+	
+			var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_btp_cli.sh";
+			out.appendLine('shellcmd: ' + shellcmd);
+			console.log()
+	
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('curl stdout: ' + stdout);
+				out.appendLine('curl stderr: ' + stderr);
+				if (err) {
+					out.appendLine('curl error: ' + err);
+				}
+	
+				shellcmd = "/bin/bash " + destfile;
+				out.appendLine('shellcmd: ' + shellcmd);
+	
+				cp.exec(shellcmd, (err, stdout, stderr) => {
+					out.appendLine('bash stdout: ' + stdout);
+					out.appendLine('bash stderr: ' + stderr);
+					if (err) {
+						out.appendLine('bash error: ' + err);
+					}
+	
+					if (remove_sh_file) {
+						shellcmd = "rm -f " + destfile;
+						out.appendLine('shellcmd: ' + shellcmd);
+	
+						cp.exec(shellcmd, (err, stdout, stderr) => {
+							out.appendLine('rm -f stdout: ' + stdout);
+							out.appendLine('rm -f stderr: ' + stderr);
+							if (err) {
+								out.appendLine('rm -f error: ' + err);
+							}
+							out.appendLine('SAP BTP CLI Installer Finished!');
+							vscode.window.showInformationMessage('SAP BTP CLI Installed OK.');
+	
+							
+							vscode.window.showInformationMessage('Verify with "btp --info" in a new terminal window.');
+						});
+					}
+					else {
+						out.appendLine('SAP BTP CLI Installer Finished!');
+					}
+				});
+			});
+			
+		});
+	
+		context.subscriptions.push(disposable10);
+	
+	
 }
 exports.activate = activate;
 
