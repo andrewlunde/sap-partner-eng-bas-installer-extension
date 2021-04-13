@@ -1,9 +1,9 @@
 {
-	"name": "bas-installer-extension",
-	"version": "0.0.20",
+	"name": "sap-bas-extras",
+	"version": "0.0.21",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
-	"displayName": "SAP Partner Engineering BAS Installer",
+	"displayName": "BAS Extras",
 	"description": "Adds commands to install extras in SAP Business Application Studio(BAS).",
 	"engines": {
 		"vscode": "^1.52.0"

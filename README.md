@@ -1,6 +1,4 @@
-# NOTICE: This extension is replaced by [BAS Extras](https://open-vsx.org/extension/sap-partner-eng/sap-bas-extras) but kept here to avoid broken links.
-
-The SAP Partner Engineering Business Application Studio(BAS) Installer Extension way to install Python,NOTROOT, other tools for customers using Eclipse Theia based IDE's. 
+ SAP Partner Engineering Business Application Studio(BAS) Installer Extension way to install Python,NOTROOT, other tools for customers using Eclipse Theia based IDE's. 
 
 ## Python 3.9.2 Install
 
