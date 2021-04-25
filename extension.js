@@ -555,14 +555,14 @@ function activate(context) {
 
 	
 	// GoLang
-	let disposable8 = vscode.commands.registerCommand('bas-installer-extension.golangInstaller', function () {
+	let disposable8a = vscode.commands.registerCommand('bas-installer-extension.golang_1_12_1_Installer', function () {
 		// The code you place here will be executed every time your command is executed
 
-		let out = vscode.window.createOutputChannel("GoLang Installer");
+		let out = vscode.window.createOutputChannel("GoLang 1.12.1 Installer");
 
 		// Display a message box to the user
 		out.clear();
-		out.appendLine('GoLang Installer Begins!');
+		out.appendLine('GoLang 1.12.1 Installer Begins!');
 
 		vscode.window.showInformationMessage('GoLang 1.12.1 Install Begins.');
 
@@ -612,7 +612,7 @@ function activate(context) {
 				out.appendLine('curl error: ' + err);
 			}
 
-			shellcmd = "/bin/bash " + destfile;
+			shellcmd = "/bin/bash " + destfile + " 1_12_1";
 			out.appendLine('shellcmd: ' + shellcmd);
 
 			cp.exec(shellcmd, (err, stdout, stderr) => {
@@ -640,7 +640,7 @@ function activate(context) {
 					});
 				}
 				else {
-					out.appendLine('GoLang Installer Finished!');
+					out.appendLine('GoLang 1.12.1 Installer Finished!');
 				}
 			});
 		});
@@ -650,7 +650,201 @@ function activate(context) {
 		//vscode.window.showInformationMessage('Python Installer Finished!');
 	});
 
-	context.subscriptions.push(disposable8);
+	context.subscriptions.push(disposable8a);
+
+	let disposable8b = vscode.commands.registerCommand('bas-installer-extension.golang_1_13_15_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("GoLang 1.13.15 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('GoLang 1.13.15 Installer Begins!');
+
+		vscode.window.showInformationMessage('GoLang 1.13.15 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_golang.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_golang.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 1_13_15";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('GoLang Installer Finished!');
+						vscode.window.showInformationMessage('GoLang 1.13.15 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "go version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('GoLang 1.13.15 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+
+	context.subscriptions.push(disposable8b);
+
+	let disposable8c = vscode.commands.registerCommand('bas-installer-extension.golang_1_16_3_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("GoLang 1.16.3 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('GoLang 1.16.3 Installer Begins!');
+
+		vscode.window.showInformationMessage('GoLang 1.16.3 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_golang.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_golang.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 1_16_3";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('GoLang Installer Finished!');
+						vscode.window.showInformationMessage('GoLang 1.16.3 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "go version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('GoLang 1.16.3 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+
+	context.subscriptions.push(disposable8c);
 
 	// mitmproxy
 	let disposable9 = vscode.commands.registerCommand('bas-installer-extension.mitmproxyInstaller', function () {
@@ -747,100 +941,195 @@ function activate(context) {
 
 	context.subscriptions.push(disposable9);
 
-		// mitmproxy
-		let disposable10 = vscode.commands.registerCommand('bas-installer-extension.btpcliInstaller', function () {
-			// The code you place here will be executed every time your command is executed
-	
-			let out = vscode.window.createOutputChannel("SAP BTP CLI Installer");
-	
-			// Display a message box to the user
-			out.clear();
-			out.appendLine('SAP BTP CLI Installer Begins!');
-	
-			vscode.window.showInformationMessage('SAP BTP CLI Installer Begins.');
-	
-			var destdir = context.storageUri;
-	
-			if (typeof destdir == "undefined") {
-				destdir = "/tmp";
-			}
-	
-			//let destdir = "/home/user";
-			//let destdir = "/tmp";
-			//let destdir = ".";
-			out.appendLine('destdir: ' + destdir);
-	
-			let destfile = destdir + "/bas_install_btp_cli.sh";
-			out.appendLine('destfile: ' + destfile);
-	
-			let remove_sh_file = false;
-	
-			vscode.workspace.fs.createDirectory(destdir);
-	
-			// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
-			vscode.workspace.getConfiguration("workbench", (currentTheme) => {
-				out.appendLine('currentTheme: ' + currentTheme);
-			});
-	
-			//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
-	
-			//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
-	
-			// let settings = vscode.workspace.getConfiguration("python");
-			// settings.update("condaPath", "whatever") => {
-			// 	ConfigurationLoader.LoadConfiguration() => {
-	
-			// 	}
-			// }
-			// await ;
-	
-			var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_btp_cli.sh";
-			out.appendLine('shellcmd: ' + shellcmd);
-			console.log()
-	
-			cp.exec(shellcmd, (err, stdout, stderr) => {
-				out.appendLine('curl stdout: ' + stdout);
-				out.appendLine('curl stderr: ' + stderr);
-				if (err) {
-					out.appendLine('curl error: ' + err);
-				}
-	
-				shellcmd = "/bin/bash " + destfile;
-				out.appendLine('shellcmd: ' + shellcmd);
-	
-				cp.exec(shellcmd, (err, stdout, stderr) => {
-					out.appendLine('bash stdout: ' + stdout);
-					out.appendLine('bash stderr: ' + stderr);
-					if (err) {
-						out.appendLine('bash error: ' + err);
-					}
-	
-					if (remove_sh_file) {
-						shellcmd = "rm -f " + destfile;
-						out.appendLine('shellcmd: ' + shellcmd);
-	
-						cp.exec(shellcmd, (err, stdout, stderr) => {
-							out.appendLine('rm -f stdout: ' + stdout);
-							out.appendLine('rm -f stderr: ' + stderr);
-							if (err) {
-								out.appendLine('rm -f error: ' + err);
-							}
-							out.appendLine('SAP BTP CLI Installer Finished!');
-							vscode.window.showInformationMessage('SAP BTP CLI Installed OK.');
-	
-							
-							vscode.window.showInformationMessage('Verify with "btp --info" in a new terminal window.');
-						});
-					}
-					else {
-						out.appendLine('SAP BTP CLI Installer Finished!');
-					}
-				});
-			});
-			
+	// BTP CLI
+	let disposable10 = vscode.commands.registerCommand('bas-installer-extension.btpcliInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SAP BTP CLI Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SAP BTP CLI Installer Begins!');
+
+		vscode.window.showInformationMessage('SAP BTP CLI Installer Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_btp_cli.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
 		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_btp_cli.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile;
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SAP BTP CLI Installer Finished!');
+						vscode.window.showInformationMessage('SAP BTP CLI Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "btp --info" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SAP BTP CLI Installer Finished!');
+				}
+			});
+		});
+		
+	});
+
+	context.subscriptions.push(disposable10);
 	
-		context.subscriptions.push(disposable10);
+	// Theta CLI
+	let disposable11 = vscode.commands.registerCommand('bas-installer-extension.thetacliInstaller', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SAP Theta CLI Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SAP Theta CLI Installer Begins!');
+
+		vscode.window.showInformationMessage('SAP Theta CLI Installer Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_theta_cli.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_theta_cli.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile;
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SAP Theta CLI Installer Finished!');
+						vscode.window.showInformationMessage('SAP Theta CLI Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "thetacli version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SAP Theta CLI Installer Finished!');
+				}
+			});
+		});
+		
+	});
+
+	context.subscriptions.push(disposable11);
 	
 	
 }

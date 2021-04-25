@@ -1,6 +1,6 @@
 {
 	"name": "sap-bas-extras",
-	"version": "0.0.21",
+	"version": "0.0.23",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "BAS Extras",
@@ -21,7 +21,9 @@
         ],
 	"activationEvents": [
 		"onCommand:bas-installer-extension.pythonInstaller",
-		"onCommand:bas-installer-extension.golangInstaller",
+		"onCommand:bas-installer-extension.golang_1_12_1_Installer",
+		"onCommand:bas-installer-extension.golang_1_13_15_Installer",
+		"onCommand:bas-installer-extension.golang_1_16_3_Installer",
 		"onCommand:bas-installer-extension.notrootInstaller",
 		"onCommand:bas-installer-extension.cfdefenvInstaller",
 		"onCommand:bas-installer-extension.cfsmsiInstaller",
@@ -29,7 +31,8 @@
 		"onCommand:bas-installer-extension.yopegenInstaller",
 		"onCommand:bas-installer-extension.hanacliInstaller",
 		"onCommand:bas-installer-extension.mitmproxyInstaller",
-		"onCommand:bas-installer-extension.btpcliInstaller"
+		"onCommand:bas-installer-extension.btpcliInstaller",
+		"onCommand:bas-installer-extension.thetacliInstaller"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -39,8 +42,16 @@
 				"title": "BAS: Install Python 3.9.2"
 			},
 			{
-				"command": "bas-installer-extension.golangInstaller",
+				"command": "bas-installer-extension.golang_1_12_1_Installer",
 				"title": "BAS: Install GoLang 1.12.1"
+			},
+			{
+				"command": "bas-installer-extension.golang_1_13_15_Installer",
+				"title": "BAS: Install GoLang 1.13.15"
+			},
+			{
+				"command": "bas-installer-extension.golang_1_16_3_Installer",
+				"title": "BAS: Install GoLang 1.16.3"
 			},
 			{
 				"command": "bas-installer-extension.notrootInstaller",
@@ -68,11 +79,15 @@
 			},
 			{
 				"command": "bas-installer-extension.mitmproxyInstaller",
-				"title": "BAS: Install mitmproxy"
+				"title": "BAS: Install mitmproxy [Deps: Python 3.9.2]"
 			},
 			{
 				"command": "bas-installer-extension.btpcliInstaller",
 				"title": "BAS: Install SAP BTP CLI"
+			},
+			{
+				"command": "bas-installer-extension.thetacliInstaller",
+				"title": "BAS: Install Theta CLI"
 			}
 		]
 	},
