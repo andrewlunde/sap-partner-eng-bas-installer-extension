@@ -1131,6 +1131,1093 @@ function activate(context) {
 
 	context.subscriptions.push(disposable11);
 	
+	// solc_0_8_4
+	let disposable12a = vscode.commands.registerCommand('bas-installer-extension.solc_0_8_4_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.8.4 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.8.4 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.8.4 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_8_4";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.8.4 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.8.4 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_8_4
+
+	context.subscriptions.push(disposable12a);
+
+	// solc_0_7_6
+	let disposable12b = vscode.commands.registerCommand('bas-installer-extension.solc_0_7_6_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.7.6 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.7.6 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.7.6 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_7_6";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.7.6 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.7.6 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_7_6
+
+	context.subscriptions.push(disposable12b);
+
+	// solc_0_6_12
+	let disposable12c = vscode.commands.registerCommand('bas-installer-extension.solc_0_6_12_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.6.12 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.6.12 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.6.12 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_6_12";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.6.12 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.6.12 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_6_12
+
+	context.subscriptions.push(disposable12c);
+
+	// solc_0_5_17
+	let disposable12d = vscode.commands.registerCommand('bas-installer-extension.solc_0_5_17_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.5.17 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.5.17 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.5.17 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_5_17";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.5.17 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.5.17 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_5_17
+
+	context.subscriptions.push(disposable12d);
+
+	// solc_0_5_0
+	let disposable12e = vscode.commands.registerCommand('bas-installer-extension.solc_0_5_0_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.5.0 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.5.0 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.5.0 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_5_0";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.5.0 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.5.0 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_5_0
+
+	context.subscriptions.push(disposable12e);
+
+	// solc_0_4_26
+	let disposable12f = vscode.commands.registerCommand('bas-installer-extension.solc_0_4_26_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.4.26 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.4.26 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.4.26 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_4_26";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.4.26 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.4.26 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_4_26
+
+	context.subscriptions.push(disposable12f);
+
+	// solc_0_4_16
+	let disposable12g = vscode.commands.registerCommand('bas-installer-extension.solc_0_4_16_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.4.16 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.4.16 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.4.16 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_4_16";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.4.16 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.4.16 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_4_16
+
+	context.subscriptions.push(disposable12g);
+
+	// solc_0_3_6
+	let disposable12h = vscode.commands.registerCommand('bas-installer-extension.solc_0_3_6_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.3.6 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.3.6 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.3.6 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_3_6";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.3.6 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.3.6 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_3_6
+
+	context.subscriptions.push(disposable12h);
+
+	// solc_0_2_2
+	let disposable12i = vscode.commands.registerCommand('bas-installer-extension.solc_0_2_2_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.2.2 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.2.2 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.2.2 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_2_2";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.2.2 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.2.2 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_2_2
+
+	context.subscriptions.push(disposable12i);
+
+	// solc_0_1_7
+	let disposable12j = vscode.commands.registerCommand('bas-installer-extension.solc_0_1_7_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.1.7 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.1.7 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.1.7 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_1_7";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.1.7 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.1.7 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+	// End 0_1_7
+
+	context.subscriptions.push(disposable12j);
+
+	// solc_0_5_0
+	let disposable12b = vscode.commands.registerCommand('bas-installer-extension.solc_0_5_0_Installer', function () {
+		// The code you place here will be executed every time your command is executed
+
+		let out = vscode.window.createOutputChannel("SOLC 0.4.16 Installer");
+
+		// Display a message box to the user
+		out.clear();
+		out.appendLine('SOLC 0.4.16 Installer Begins!');
+
+		vscode.window.showInformationMessage('SOLC 0.4.16 Install Begins.');
+
+		var destdir = context.storageUri;
+
+		if (typeof destdir == "undefined") {
+			destdir = "/tmp";
+		}
+
+		//let destdir = "/home/user";
+		//let destdir = "/tmp";
+		//let destdir = ".";
+		out.appendLine('destdir: ' + destdir);
+
+		let destfile = destdir + "/bas_install_solc.sh";
+		out.appendLine('destfile: ' + destfile);
+
+		let remove_sh_file = false;
+
+		vscode.workspace.fs.createDirectory(destdir);
+
+		// let currentTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+		vscode.workspace.getConfiguration("workbench", (currentTheme) => {
+			out.appendLine('currentTheme: ' + currentTheme);
+		});
+
+		//await vscode.workspace.getConfiguration().update("workbench.colorTheme", "Red");
+
+		//let newTheme = await vscode.workspace.getConfiguration().get("workbench.colorTheme");
+
+		// let settings = vscode.workspace.getConfiguration("python");
+		// settings.update("condaPath", "whatever") => {
+		// 	ConfigurationLoader.LoadConfiguration() => {
+
+		// 	}
+		// }
+		// await ;
+
+		var shellcmd = "curl -s -L -o " + destfile + " https://raw.githubusercontent.com/SAP-samples/hana-python-securestore/master/tools/bas_install_solc.sh";
+		out.appendLine('shellcmd: ' + shellcmd);
+		console.log()
+
+		cp.exec(shellcmd, (err, stdout, stderr) => {
+			out.appendLine('curl stdout: ' + stdout);
+			out.appendLine('curl stderr: ' + stderr);
+			if (err) {
+				out.appendLine('curl error: ' + err);
+			}
+
+			shellcmd = "/bin/bash " + destfile + " 0_5_0";
+			out.appendLine('shellcmd: ' + shellcmd);
+
+			cp.exec(shellcmd, (err, stdout, stderr) => {
+				out.appendLine('bash stdout: ' + stdout);
+				out.appendLine('bash stderr: ' + stderr);
+				if (err) {
+					out.appendLine('bash error: ' + err);
+				}
+
+				if (remove_sh_file) {
+					shellcmd = "rm -f " + destfile;
+					out.appendLine('shellcmd: ' + shellcmd);
+
+					cp.exec(shellcmd, (err, stdout, stderr) => {
+						out.appendLine('rm -f stdout: ' + stdout);
+						out.appendLine('rm -f stderr: ' + stderr);
+						if (err) {
+							out.appendLine('rm -f error: ' + err);
+						}
+						out.appendLine('SOLC Installer Finished!');
+						vscode.window.showInformationMessage('SOLC 0.4.16 Installed OK.');
+
+						
+						vscode.window.showInformationMessage('Verify with "solc --version" in a new terminal window.');
+					});
+				}
+				else {
+					out.appendLine('SOLC 0.4.16 Installer Finished!');
+				}
+			});
+		});
+		
+
+		// Display a message box to the user
+		//vscode.window.showInformationMessage('Python Installer Finished!');
+	});
+
+	context.subscriptions.push(disposable12b);
 	
 }
 exports.activate = activate;

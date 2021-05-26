@@ -1,6 +1,6 @@
 {
 	"name": "sap-bas-extras",
-	"version": "0.0.23",
+	"version": "0.0.26",
 	"publisher": "sap-partner-eng",
 	"license": "MIT",
 	"displayName": "BAS Extras",
@@ -32,7 +32,17 @@
 		"onCommand:bas-installer-extension.hanacliInstaller",
 		"onCommand:bas-installer-extension.mitmproxyInstaller",
 		"onCommand:bas-installer-extension.btpcliInstaller",
-		"onCommand:bas-installer-extension.thetacliInstaller"
+		"onCommand:bas-installer-extension.thetacliInstaller",
+		"onCommand:bas-installer-extension.solc_0_8_4_Installer",
+		"onCommand:bas-installer-extension.solc_0_7_6_Installer",
+		"onCommand:bas-installer-extension.solc_0_6.12_Installer",
+		"onCommand:bas-installer-extension.solc_0_5_17_Installer",
+		"onCommand:bas-installer-extension.solc_0_5_0_Installer",
+		"onCommand:bas-installer-extension.solc_0_4_26_Installer",
+		"onCommand:bas-installer-extension.solc_0_4_16_Installer",
+		"onCommand:bas-installer-extension.solc_0_3_6_Installer",
+		"onCommand:bas-installer-extension.solc_0_2_2_Installer",
+		"onCommand:bas-installer-extension.solc_0_1_7_Installer"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -88,6 +98,46 @@
 			{
 				"command": "bas-installer-extension.thetacliInstaller",
 				"title": "BAS: Install Theta CLI"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_8_4_Installer",
+				"title": "BAS: Install SOLC 0.8.4"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_7_6_Installer",
+				"title": "BAS: Install SOLC 0.7.6"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_6.12_Installer",
+				"title": "BAS: Install SOLC 0.6.12"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_5_17_Installer",
+				"title": "BAS: Install SOLC 0.5.17"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_5_0_Installer",
+				"title": "BAS: Install SOLC 0.5.0"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_4_26_Installer",
+				"title": "BAS: Install SOLC 0.4.26"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_4_16_Installer",
+				"title": "BAS: Install SOLC 0.4.16"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_3_6_Installer",
+				"title": "BAS: Install SOLC 0.3.6"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_2_2_Installer",
+				"title": "BAS: Install SOLC 0.2.2"
+			},
+			{
+				"command": "bas-installer-extension.solc_0_1_7_Installer",
+				"title": "BAS: Install SOLC 0.1.7"
 			}
 		]
 	},

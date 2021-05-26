@@ -5,6 +5,15 @@
 {
 	"version": "0.2.0",
 	"configurations": [
+	{
+		"name": "Debug Trustee",
+		"program": "${workspaceFolder}/cf/trustee/server.js",
+		"request": "launch",
+		"skipFiles": [
+			"<node_internals>/**"
+		],
+		"type": "pwa-node"
+	},
 		{
 			"name": "Run Extension",
 			"type": "extensionHost",
